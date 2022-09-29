@@ -1,0 +1,42 @@
+//Name:Jenis Patel  
+//Student ID:21CE093
+
+import java.util.*;
+
+class mythread extends Thread
+{
+    int n;
+    mythread(int n)
+    {
+        this.n = n;
+    }
+    public void increment()
+    {
+        for(int i=0;i<5;i++)
+        {
+            System.out.println(++a);
+            try
+        {
+            sleep(1000);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        // sleep(1000);
+        }
+    }
+    public void run()
+    {
+        increment(); 
+    }
+}
+public class sleep {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number :-");
+        int n = sc.nextInt();
+        mythread m = new mythread(n);
+        m.start();
+    }
+}
