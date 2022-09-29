@@ -1,0 +1,64 @@
+//Name:Jenis Patel  
+//Student ID:21CE093
+import java.util.*;
+class odd extends Thread{
+    int arr[] = new int[30];
+    odd(int []arr)
+    {
+        for(int i=0;i<30;i++)
+        {
+            this.arr[i] = arr[i];
+        }
+    }
+
+    @Override
+    public void run()
+    {
+        for(int i=0;i<30;i++)
+        {
+            if(arr[i]%2 != 0)
+            {
+                System.out.println("Odd number:-  "+arr[i]);
+            }
+        }
+    }
+}
+
+class even extends Thread
+{
+    int arr[] = new int[30];
+    even(int [] arr)
+    {
+        for(int i=0;i<30;i++)
+        {
+            this.arr[i] = arr[i];
+        }
+    }
+
+    @Override
+    public void run()
+    {
+        for(int i=0;i<30;i++)
+        {
+            if(arr[i]%2 == 0)
+            {
+                System.out.println("Even number:-  "+arr[i]);
+            }
+        }
+    }
+}
+public class Threadoddeven {
+    public static void main(String[] args) {
+        int arr[] = new int[30];
+        Random r = new Random();
+        for(int i=0;i<30;i++)
+        {
+            arr[i] = r.nextInt(100);
+        }
+        odd a = new odd(arr);
+        even b = new even(arr);
+
+        a.start();
+        b.start();
+    }
+}
